@@ -1,0 +1,236 @@
+{
+  "ver" : "1.0.0",
+  "authors" : [ ],
+  "contact" : "help@kbase.us",
+  "visible" : true,
+  "categories" : ["active"],
+  "widgets" : {
+    "input" : null,
+    "output" : null
+  },
+  "parameters" : [ {
+    "id" : "experiment_id",
+    "optional" : false,
+    "advanced" : false,
+    "allow_multiple" : false,
+    "default_values" : [ "" ],
+    "field_type" : "text"
+  },{
+    "id" : "title",
+    "optional" : false,
+    "advanced" : false,
+    "allow_multiple" : false,
+    "default_values" : [ "" ],
+    "field_type" : "text"
+  },{
+    "id" : "experiment_desc",
+    "optional" : true,
+    "advanced" : false,
+    "allow_multiple" : false,
+    "default_values" : [ "" ],
+    "field_type" : "textarea",
+    "textarea_options" : {
+      "n_rows" : 4
+    }
+  },{
+    "id" : "experiment_design",
+    "optional" : true,
+    "advanced" : false,
+    "allow_multiple" : false,
+    "default_values" : [ "" ],
+    "field_type" : "text"
+  },{
+    "id" : "platform",
+    "optional" : true,
+    "advanced" : false,
+    "allow_multiple" : false,
+    "default_values" : [ "" ],
+    "field_type" : "text"
+  },{
+    "id" : "Library_type",
+    "optional" : false,
+    "advanced" : false,
+    "allow_multiple" : false,
+    "default_values" : [ "" ],
+    "field_type" : "dropdown",
+    "dropdown_options":{
+      "options": [
+        {
+          "value": "singleEnd",
+          "display": "Single-End",
+          "id": "singleEnd",
+          "ui_name": "singleEnd"
+        },
+        {
+          "value": "pairedEnd",
+          "display": "Paired-End",
+          "id": "pairedEnd",
+          "ui_name": "pairedEnd"
+        }
+      ]
+    }
+  },{
+    "id" : "genome_id",
+    "optional" : true,
+    "advanced" : false,
+    "allow_multiple" : false,
+    "default_values" : [ "" ],
+    "field_type" : "text",
+    "text_options" : {
+      "valid_ws_types" : [ "KBaseGenomes.Genome" ]
+    }
+  },{
+    "id" : "annotation_id",
+    "optional" : true,
+    "advanced" : false,
+    "allow_multiple" : false,
+    "default_values" : [ "" ],
+    "field_type" : "text",
+    "text_options" : {
+      "valid_ws_types" : [ "KBaseRNASeq.ReferenceAnnotation" ]
+    }
+  },{
+    "id" : "num_samples",
+    "optional" : false,
+    "advanced" : false,
+    "allow_multiple" : false,
+    "default_values" : [ "" ],    
+    "field_type" : "text",
+    "text_options" : {
+      "valid_ws_types" : [ ],
+      "validate_as": "int",
+      "min_int" : 2
+    }
+  },{
+    "id" : "num_replicates",
+    "optional" : false,
+    "advanced" : false,
+    "allow_multiple" : false,
+    "default_values" : [ "" ],    
+    "field_type" : "text",
+    "text_options" : {
+      "valid_ws_types" : [ ],
+      "validate_as": "int",
+      "min_int" : 2
+    }
+  },{
+    "id" : "tissue",
+    "optional" : true,
+    "advanced" : false,
+    "allow_multiple" : true,
+    "default_values" : [ "" ],
+    "field_type" : "text"
+  },{
+    "id" : "condition",
+    "optional" : true,
+    "advanced" : false,
+    "allow_multiple" : true,
+    "default_values" : [ "" ],
+    "field_type" : "text"
+  },{
+    "id" : "source",
+    "optional" : true,
+    "advanced" : false,
+    "allow_multiple" : false,
+    "default_values" : [ "" ],
+    "field_type" : "text"
+  },{
+    "id" : "publication_id",
+    "optional" : true,
+    "advanced" : true,
+    "allow_multiple" : false,
+    "default_values" : [ "" ],
+    "field_type" : "text"
+  },{
+    "id" : "source_id",
+    "optional" : true,
+    "advanced" : true,
+    "allow_multiple" : true,
+    "default_values" : [ "" ],
+    "field_type" : "text"
+  },{
+    "id" : "external_source_date",
+    "optional" : true,
+    "advanced" : true,
+    "allow_multiple" : false,
+    "default_values" : [ "" ],
+    "field_type" : "text"
+  }],
+  "behavior" : {
+    "service-mapping" : {
+    	"url" : "",
+    	"name" : "KBaseRNASeq",
+    	"method" : "SetupRNASeqAnalysis",
+	"input_mapping" : [    
+	{
+          "narrative_system_variable": "workspace",
+          "target_property": "ws_id"
+        },
+        {
+          "input_parameter": "experiment_id",
+          "target_property": "experiment_id"
+        },{
+          "input_parameter": "title",
+          "target_property": "title"
+        },{
+          "input_parameter": "experiment_design",
+          "target_property": "experiment_design"
+        },{
+          "input_parameter": "experiment_desc",
+          "target_property": "experiment_desc" 
+        },{
+          "input_parameter": "platform",
+          "target_property": "platform"
+        },{
+          "input_parameter": "Library_type",
+          "target_property": "Library_type"
+        },{
+          "input_parameter": "genome_id",
+          "target_property": "genome_id"
+        },{
+          "input_parameter": "annotation_id",
+          "target_property": "annotation_id"
+        },{
+          "input_parameter": "num_samples",
+          "target_property": "num_samples"
+        },{
+          "input_parameter": "num_replicates",
+          "target_property": "num_replicates"
+        },{
+          "input_parameter": "tissue",
+          "target_property": "tissue"
+        }, {
+          "input_parameter": "condition",
+          "target_property": "condition"
+        }, {
+          "input_parameter": "source",
+          "target_property": "source"
+        },{
+          "input_parameter": "publication_id",
+          "target_property": "publication_id"
+        },{
+          "input_parameter": "source_id",
+          "target_property": "source_id"
+        },{
+          "input_parameter": "external_source_date",
+          "target_property": "external_source_date"
+        }
+      ],
+      "output_mapping" : [
+	{
+	 "narrative_system_variable": "workspace",
+         "target_property": "workspace"
+	},
+	{
+	 "input_parameter": "experiment_id",
+         "target_property": "output"
+	},
+      	{
+      	 "service_method_output_path": [0],
+	 "target_property": "SetupRNASeqAnalysis"
+	}
+      ]
+    }
+  },
+  "job_id_output_field" : "docker"
+}
