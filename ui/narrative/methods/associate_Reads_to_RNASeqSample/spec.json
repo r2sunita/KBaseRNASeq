@@ -70,13 +70,6 @@
     "default_values" : [ "" ],
     "field_type" : "text"
   },{
-    "id" : "platform",
-    "optional" : true,
-    "advanced" : false,
-    "allow_multiple" : false,
-    "default_values" : [ "" ],
-    "field_type" : "text"
-  },{
     "id" : "library_type",
     "optional" : false,
     "advanced" : false,
@@ -138,13 +131,6 @@
     "default_values" : [ "" ],
     "field_type" : "text"
   },{
-    "id" : "domain",
-    "optional" : true,
-    "advanced" : false,
-    "allow_multiple" : false,
-    "default_values" : [ "" ],
-    "field_type" : "text"
-  },{
     "id" : "ext_source_date",
     "optional" : true,
     "advanced" : true,
@@ -181,9 +167,6 @@
           "input_parameter": "sample_desc",
           "target_property": "sample_desc"
         },{
-          "input_parameter": "platform",
-          "target_property": "platform"
-        },{
           "input_parameter": "library_type",
           "target_property": "library_type"
         },{
@@ -201,9 +184,6 @@
         }, {
           "input_parameter": "source_id",
           "target_property": "source_id"
-        },{
-          "input_parameter": "domain",
-          "target_property": "domain"
         },{
           "input_parameter": "ext_source_date",
           "target_property": "ext_source_date"
